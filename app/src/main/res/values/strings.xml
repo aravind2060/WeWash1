@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Capstone0</string>
+
+    <string name="Email_Address">Email Address</string>
+    <string name="Password">Password</string>
+    <string name="Confirm_Password">Confirm Password</string>
+    <string name="Sign_In">Sign In</string>
+    <string name="Sign_Up">SignUP</string>
+    <string name="Display_Name">Reddy</string>
+    <string name="Full_Name">Enter Name</string>
+    <string name="Gender_Type">Gender</string>
+    <string name="Phone_Number">Phone Number</string>
+
+    <array name="AreaList">
+        <item>LawGate</item>
+        <item>MainGate</item>
+        <item>Maheru</item>
+        <item>Jalandhar</item>
+    </array>
+    <array name="PickUpTime">
+        <item>10-12</item>
+        <item>1-3</item>
+        <item>5-8</item>
+    </array>
+    <array name="NoOfClothes">
+        <item>1-10</item>
+        <item>20-40</item>
+        <item>40-60</item>
+    </array>
+    <string name="Donot_have_account">Don\'t Have Account?</string>
+
+    <string name="Trouble_Logging_In">Trouble Logging in? </string>
+
+    <string name="Reset">Reset Your Password</string>
+    <string name="Send">Send</string>
+    <string name="Otp">Enter Otp</string>
+    <string name="men_icon_name">Men </string>
+    <string name="women_icon_name">Women </string>
+    <string name="profile_icon_name">Profile </string>
+
+    <string name="Profile_Content_Description_Profile_Picture">This image is to display profile Picture</string>
+    <string name="Profile_Description_EditIcon">This is to edit something</string>
+    <string name="Profile_MyWishList">My WishList</string>
+    <string name="Profile_ViewAllOrders">View AllOrders</string>
+    <string name="Profile_MyOrders">My Orders</string>
+    <string name="Profile_MyOrders_ViewAll">View All Orders</string>
+    <string name="Profile_MyCart">MyCart</string>
+    <string name="Profile_MyCart_ViewAll">View Your Cart</string>
+    <string name="Profile_Settings">Account Settings</string>
+    <string name="Profile_Settings_Update">Update</string>
+    <string name="Profile_MyAddresses">My Addresses</string>
+    <string name="Profile_MyAddresses_Add">Change Address</string>
+    <string name="Profile_Logout">Logout</string>
+    <string name="Profile_Content_Description_Logout">This is to logout from application</string>
+    <string name="Profile_MyWishList_View">Your WishList</string>
+    <string name="MyAddress_Fragment_Add_New_Address">+Add a New Address</string>
+    <string name="Add_New_Address">Add New Address</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

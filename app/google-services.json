@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "29005767788",
+    "firebase_url": "https://wewash-43726.firebaseio.com",
+    "project_id": "wewash-43726",
+    "storage_bucket": "wewash-43726.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29005767788:android:0f8653378b1d1e03ade449",
+        "android_client_info": {
+          "package_name": "com.example.wewash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29005767788-i54vbr5l7eou42j8uaf78228tnc1mfoh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wewash",
+            "certificate_hash": "45d71055d04f66499cd48b92423c8dc88e18637e"
+          }
+        },
+        {
+          "client_id": "29005767788-f3ll35tu2bbn0fl4ep1srg829of8tbsh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi7gTb_W6iKRCAMaNc0PjlyPi9vfCrSAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29005767788-f3ll35tu2bbn0fl4ep1srg829of8tbsh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

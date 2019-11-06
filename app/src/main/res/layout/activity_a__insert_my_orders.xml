@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyOrders.A_InsertMyOrders"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+          <com.google.android.material.textfield.TextInputLayout
+              android:id="@+id/Txt_Input_Layout_MyOrders1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:errorEnabled="true"
+              >
+              <com.google.android.material.textfield.TextInputEditText
+                  android:id="@+id/Txt_Input_EditText_Name"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="Name"
+                  android:inputType="textPersonName"
+                  />
+          </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Txt_Input_Layout_MyOrders2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Txt_Input_EditText_PhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Phone_Number"
+                    android:inputType="number"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Txt_Input_Layout_MyOrders3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Txt_Input_EditText_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Email_Address"
+                    android:inputType="textEmailAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/SelectArea_Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Area"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
+                android:textSize="15sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/area"
+                android:textSize="20sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"/>
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/Txt_Input_Layout_MyOrders4"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/Address"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="Address"
+                    />
+           </com.google.android.material.textfield.TextInputLayout>
+           <Button
+               android:id="@+id/PickUpDate"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Pick Up Date"
+               />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pickup Time"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
+                android:textSize="15sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/time"
+                android:textSize="20sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Clothes"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif"
+                android:textSize="15sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/total"
+                android:textSize="20sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rv1"
+                android:padding="20dp"
+                android:background="@color/DodgerBlue"
+                android:textSize="15sp"
+                android:text="Book Now"
+                android:textColor="@color/White"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/booknow"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
