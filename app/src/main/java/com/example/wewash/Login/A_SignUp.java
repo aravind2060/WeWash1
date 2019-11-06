@@ -156,12 +156,12 @@ public class A_SignUp extends AppCompatActivity implements View.OnClickListener 
     private boolean checkName(String Data)
     {
         if (TextUtils.isEmpty(Data)) {
-            Name1.setError("Name cannot be empty!!");
+            Name1.setError("name cannot be empty!!");
             return false;
         }
         else if(!USER_NAME_PATTERN.matcher(Data).matches())
         {
-            Name1.setError("Not a Valid Name!!");
+            Name1.setError("Not a Valid name!!");
             return false;
         }
         else

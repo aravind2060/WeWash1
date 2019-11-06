@@ -100,7 +100,7 @@ public class A_InsertMyOrders extends AppCompatActivity implements View.OnClickL
             NameLayout.setError(null);
             return true;
         } else {
-           NameLayout.setError("Name cannot be empty!");
+           NameLayout.setError("name cannot be empty!");
             return false;
         }
     }

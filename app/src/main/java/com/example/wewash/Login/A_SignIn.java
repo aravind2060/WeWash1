@@ -371,7 +371,7 @@ public class A_SignIn extends AppCompatActivity implements View.OnClickListener 
 //        if (!TextUtils.isEmpty(EmailData))
 //        {
 //            D_CurrentUser.setEmail(EmailData);
-//            D_CurrentUser.setName(sharedPreferences.getString("Name",""));
+//            D_CurrentUser.setName(sharedPreferences.getString("name",""));
 //            D_CurrentUser.setPhoneNumber(sharedPreferences.getString("Phone",""));
 //        }
 //    }
@@ -379,7 +379,7 @@ public class A_SignIn extends AppCompatActivity implements View.OnClickListener 
 //    {
 //        SharedPreferences sharedPreferences=getSharedPreferences("CurrentLoggedInUserDetails",0);
 //        SharedPreferences.Editor editor=sharedPreferences.edit();
-//        editor.putString("Name",D_CurrentUser.getName());
+//        editor.putString("name",D_CurrentUser.getName());
 //        editor.putString("Email",D_CurrentUser.getEmail());
 //        editor.putString("Gender",D_CurrentUser.getGender());
 //        editor.putString("Phone",D_CurrentUser.getPhone());
