@@ -17,52 +17,58 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class A_DisplayMyProducts extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<D_OrdersData> dOrdersDataArrayList=new ArrayList<>();
+    List<D_OrdersData> dOrdersDataArrayList;
     MyAdapter myAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a__display_my_products);
-        getDataFromFireBase();
+       dOrdersDataArrayList= getDataFromFireBase();
+
+       Log.e("DisplayProduct ","Size in oncreate:"+dOrdersDataArrayList.size());
+        Toast.makeText(this, "Size :"+dOrdersDataArrayList.size(), Toast.LENGTH_SHORT).show();
     }
     private void findViewByIds()
     {
       recyclerView=findViewById(R.id.RecyclerViewMyOrders);
 
     }
-  private void getDataFromFireBase()
+  private ArrayList<D_OrdersData> getDataFromFireBase()
   {
+      final ArrayList<D_OrdersData> arrayList=new ArrayList<>();
       DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-      databaseReference.orderByKey().equalTo("MyOrders").addValueEventListener(new ValueEventListener() {
+      databaseReference.child("MyOrders").addListenerForSingleValueEvent(new ValueEventListener() {
           @Override
           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-              if (dataSnapshot.exists())
-              {
-                 for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren())
-                 {
-                     D_OrdersData dOrdersData=dataSnapshot1.getValue(D_OrdersData.class);
-                     if (dOrdersData!=null)
-                     {
-                        dOrdersDataArrayList.add(dOrdersData);
-                        Log.e("DisplayAProduct",""+dOrdersDataArrayList.get(0).name);
-                     }
-                     else
-                     {
-                         Log.e("DisplayProduct","Null  returned");
-                     }
-                 }
-              }
-              else
-              {
-                  Toast.makeText(A_DisplayMyProducts.this, "No Past Orders", Toast.LENGTH_SHORT).show();
-              }
+
+
+                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()) {
+                    if (dataSnapshot1.exists()) {
+                        String address = dataSnapshot1.child("address").getValue(String.class);
+                        String dateBooked = dataSnapshot1.child("dateBooked").getValue(String.class);
+                        String expectedDeliveryTime = dataSnapshot1.child("expectedDeliveryTime").getValue(String.class);
+                        String name = dataSnapshot1.child("name").getValue(String.class);
+                        String noOfClothes = dataSnapshot1.child("noOfClothes").getValue(String.class);
+                        String orderId = dataSnapshot1.child("orderId").getValue(String.class);
+                        String phone = dataSnapshot1.child("phone").getValue(String.class);
+                        String status = dataSnapshot1.child("status").getValue(String.class);
+                        arrayList.add( new D_OrdersData(address, dateBooked, expectedDeliveryTime, name, noOfClothes, orderId, phone, status));
+                         //dOrdersDataArrayList.add( dataSnapshot1.getValue(D_OrdersData.class));
+                         Log.e("DisplayProduct","Going inside");
+                    }
+                    else
+                        Log.e("DisplayProduct","Snapshot does not exist");
+                }
           }
 
           @Override
@@ -70,6 +76,8 @@ public class A_DisplayMyProducts extends AppCompatActivity {
 
           }
       });
+
+      return arrayList;
   }
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolderClass>

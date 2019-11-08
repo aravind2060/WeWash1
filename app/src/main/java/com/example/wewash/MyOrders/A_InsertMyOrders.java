@@ -27,7 +27,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class A_InsertMyOrders extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,7 +39,6 @@ public class A_InsertMyOrders extends AppCompatActivity implements View.OnClickL
     Spinner NoOfClothes,PickUpTime,Area;
     Button BookNow,PickUpDate;
     private int mYear, mMonth, mDay;
-    int noOfPreviousOrders=0;
     String noOfClothes,mtime;
     String mArea;
     @Override
@@ -76,9 +78,8 @@ public class A_InsertMyOrders extends AppCompatActivity implements View.OnClickL
           if (checkName(Name.getEditableText().toString()) && checkPhone(Phone.getEditableText().toString()) && checkEmail(Email.getEditableText().toString()) && checkAddress(Address.getEditableText().toString())  && checkNoOfClothes(noOfClothes) && checkPickUpTime(mtime))
           {
               DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MyOrders");
-
-              D_OrdersData d_ordersData=new D_OrdersData(Name.getEditableText().toString(),Address.getEditableText().toString(),Phone.getEditableText().toString(),"6-05-2019",""+mtime,""+noOfClothes);
-              databaseReference.push().setValue(d_ordersData).addOnCompleteListener(new OnCompleteListener<Void>() {
+             D_OrdersData dOrdersData=new D_OrdersData(Address.getEditableText().toString(),""+mDay+"-"+mMonth+"-"+mYear,mtime,Name.getEditableText().toString(),noOfClothes,""+getDateTime(),Phone.getEditableText().toString(),"orderPlaced");
+              databaseReference.push().setValue(dOrdersData).addOnCompleteListener(new OnCompleteListener<Void>() {
                   @Override
                   public void onComplete(@NonNull Task<Void> task) {
                       if (task.isSuccessful())
@@ -93,7 +94,11 @@ public class A_InsertMyOrders extends AppCompatActivity implements View.OnClickL
           }
         }
     }
-
+    private String getDateTime() {
+        DateFormat dateFormat = new SimpleDateFormat("ddMMyyyyHHmmss");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
 
     private boolean checkName(String name) {
         if (!TextUtils.isEmpty(name)) {
